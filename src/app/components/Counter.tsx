@@ -36,8 +36,9 @@ class Counter extends React.Component<any, any> {
     const {count, timer, maxCout} = this.state
     return (
       <div>
-        { count == 0 ?
           <h2>Cuantas veces puedes hacer click en el boton en 10 segundos?</h2>
+        { count == 0 ?
+          <h2>{this.props.MAX_TIMER}</h2>
           :
           <h2>{timer}</h2>
         }
