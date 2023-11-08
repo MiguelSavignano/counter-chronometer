@@ -2,6 +2,8 @@ import Counter from './components/Counter';
 
 export default function Home() {
   return (
-   <Counter />
+    <center>
+      <Counter MAX_TIMER={10} />
+    </center>
   );
 }

@@ -37,7 +37,7 @@ class Counter extends React.Component<any, any> {
     return (
       <div>
         { count == 0 ?
-          <h4>Cuantas veces puedes hacer click en el boton en 10 segundos?</h4>
+          <h2>Cuantas veces puedes hacer click en el boton en 10 segundos?</h2>
           :
           <h2>{timer}</h2>
         }
@@ -45,7 +45,9 @@ class Counter extends React.Component<any, any> {
         <br/>
         <h4>clicks: {count}</h4> <br/>
       <br/>
-      <button className="btn btn-info btn-lg"
+      <button
+        style={{padding: '10px', backgroundColor: "palevioletred"}}
+       className="btn btn-info btn-lg"
           onClick={this.onCountUp}>
           { this.finish() ? 'Se acabo' : 'click!'}
         </button> <br/><br/>
