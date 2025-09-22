@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as _ from 'lodash';
 
 class Counter extends React.Component<any, any> {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     _.bindAll(this, ['timerStart', 'restart', 'onCountUp', 'finish'])
     this.state = { count: 0, timer: 10, maxCout: 0 }
@@ -36,23 +36,23 @@ class Counter extends React.Component<any, any> {
     const {count, timer, maxCout} = this.state
     return (
       <div>
-          <h2>Cuantas veces puedes hacer click en el boton en 10 segundos?</h2>
+        <h2>How many times can you click the button in 10 seconds?</h2>
         { count == 0 ?
-          <h2>{this.props.MAX_TIMER}</h2>
+          <h2 className="display-1">{this.props.MAX_TIMER}</h2>
           :
-          <h2>{timer}</h2>
+          <h2 className="display-1">{timer}</h2>
         }
-        { (maxCout != 0) && <h4>clicks maximos: {maxCout}</h4> }
+        { (maxCout != 0) && <h4>Max clicks: {maxCout}</h4> }
         <br/>
         <h4>clicks: {count}</h4> <br/>
-      <br/>
-      <button
-        style={{padding: '10px', backgroundColor: "palevioletred"}}
-       className="btn btn-info btn-lg"
+        <br/>
+        <button
+          className="btn btn-primary btn-lg"
           onClick={this.onCountUp}>
-          { this.finish() ? 'Se acabo' : 'click!'}
-        </button> <br/><br/>
-        <button className="btn btn-info btn-lg"
+          { this.finish() ? 'Finished' : 'click!' }
+        </button>
+        <br/><br/>
+        <button className="btn btn-outline-secondary btn-sm"
                 onClick={this.restart}>
           Restart
         </button>
