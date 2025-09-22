@@ -36,23 +36,20 @@ class Counter extends React.Component<any, any> {
     const {count, timer, maxCout} = this.state
     return (
       <div>
-        <h2>How many times can you click the button in 10 seconds?</h2>
         { count == 0 ?
-          <h2 className="display-1">{this.props.MAX_TIMER}</h2>
+          <h1 className="display-1 font-weight-bold">{this.props.MAX_TIMER}</h1>
           :
-          <h2 className="display-1">{timer}</h2>
+          <h1 className="display-1 font-weight-bold">{timer}</h1>
         }
-        { (maxCout != 0) && <h4>Max clicks: {maxCout}</h4> }
-        <br/>
-        <h4>clicks: {count}</h4> <br/>
-        <br/>
+        <p className="lead">clicks: {count}</p>
+        { (maxCout != 0) && <p className="text-muted">Max clicks: {maxCout}</p> }
         <button
-          className="btn btn-primary btn-lg"
+          className="btn btn-dark btn-lg mt-3"
           onClick={this.onCountUp}>
           { this.finish() ? 'Finished' : 'click!' }
         </button>
         <br/><br/>
-        <button className="btn btn-outline-secondary btn-sm"
+        <button className="btn btn-link btn-sm"
                 onClick={this.restart}>
           Restart
         </button>
